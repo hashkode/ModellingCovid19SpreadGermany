@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{graphicx}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{textcomp}
+%\usepackage{url}
+\usepackage{hyperref}
+\usepackage[top=31mm, left=25mm, right=25mm, bottom=25mm, headsep=6mm, headheight=13.6pt]{geometry}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{subcaption}
+\usepackage{dsfont}
+
+\pagenumbering{gobble}
+
+
+\makeatletter
+\newcounter{manualsubequation}
+\renewcommand{\themanualsubequation}{\alph{manualsubequation}}
+\newcommand{\startsubequation}{%
+  \setcounter{manualsubequation}{0}%
+  \refstepcounter{equation}\ltx@label{manualsubeq\theequation}%
+  \xdef\labelfor@subeq{manualsubeq\theequation}%
+}
+\newcommand{\tagsubequation}{%
+  \stepcounter{manualsubequation}%
+  \tag{\ref{\labelfor@subeq}\themanualsubequation}%
+}
+\let\subequationlabel\ltx@label
+\makeatother
+
+\begin{document}
+\begin{align}
+\startsubequation\tagsubequation\label{eq:11a}
+	S_j &= \mathds{1} - diag(e_j + i_j + r_j)
+\\
+\tagsubequation\label{eq:11b}
+\begin{split}
+    e_{j+1} &= e_j + h (S_j ((\beta_{E1} A1_{s_j} + \beta_{E2} A2_{s_j} + \beta_{E3} A3_{s_j}) e_j^T + 
+    \\
+    &\quad(\beta_{I1} A1_{s_j} + \beta_{I2} A2_{s_j} + \beta_{I3} A3_{s_j}) i_j^T) - \sigma e_j^T)^T
+\end{split}
+\\
+\tagsubequation\label{eq:11c}
+	i_{j+1} &= i_j + h (\sigma e_j - \gamma i_j)
+\\
+\tagsubequation\label{eq:11d}
+    r_{j+1} &= r_j + h (\gamma i_j)
+\end{align}
+
+\end{document}

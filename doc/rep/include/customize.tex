@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CUSTOMIZING Tex-File for students to be adjusted as needed %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM PACKAGES	%
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textgreek}
+\usepackage{dsfont}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{flushend}
+
+% \usepackage{IEEEtrantools}
+
+%%%%%%%%%%%%%%%%%%%%%
+% CUSTOM COMMANDS	%
+%%%%%%%%%%%%%%%%%%%%%
+% e.g. Math conventions as vectors, Matrices, sets
+\renewcommand{\vec}[1]{\mathbf{\MakeLowercase{#1}}}
+\newcommand{\Mat}[1]{\mathbf{\MakeUppercase{#1}}}
+\newcommand{\set}[1]{\boldsymbol{#1}}
+
+\makeatletter
+\newcounter{manualsubequation}
+\renewcommand{\themanualsubequation}{\alph{manualsubequation}}
+\newcommand{\startsubequation}{%
+  \setcounter{manualsubequation}{0}%
+  \refstepcounter{equation}\ltx@label{manualsubeq\theequation}%
+  \xdef\labelfor@subeq{manualsubeq\theequation}%
+}
+\newcommand{\tagsubequation}{%
+  \stepcounter{manualsubequation}%
+  \tag{\ref{\labelfor@subeq}\themanualsubequation}%
+}
+\let\subequationlabel\ltx@label
+\makeatother
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+
+% e.g. use differenc layers in tikz
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,edgelayer,nodelayer,main,foreground}
+%%%%%%%%%%%%%%%%%%%%%
+% HYPHENATIONS 		%
+%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{Lya-pu-nov}

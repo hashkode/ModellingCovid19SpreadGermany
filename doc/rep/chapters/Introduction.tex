@@ -1,0 +1,36 @@
+\section{Introduction}
+
+\subsection{Problem Statement}
+This report deals with the specific situation of COVID-19 spreading in Germany. It aims to contribute to the field of COVID-19 spread models. Hereby, it helps to tackle the current lack of concepts that consider the unique combination of extensive public transport infrastructure and regionally differing COVID-19 legislation as is faced in Germany.
+
+The lack of such a model is in equal parts attributable to:
+\begin{itemize}
+	\item the data collection avoidance due to the population's mindset valuing data privacy (GDPR et al.) and
+	\item the niche role of digital solutions to everyday activities like commuting, which would allow data collection in the first place.
+\end{itemize}
+
+Hence, acquisition of actual usage data of public transport networks is complex and revolves around the combination of different (proxy) data sources; namely public transport schedules, behavior data and models of passengers and data sets to account for legislation and pandemic parameters on various geographical scopes.
+
+\subsection{Related Work}
+Pandemics in general and the COVID-19 pandemic caused by the spread of the SARS-CoV-2 virus specifically are of concern for a number of different academic entities and fields. The works that are of specific relevance for this report can be clustered into six categories:
+
+\begin{enumerate}
+	\item varying approaches to model pandemics \cite{zinoAnalysisPredictionControl2021}
+	\item varying extensions of SIR models \cite{liuNewSEAIRDPandemic2021}, \cite{ramosSimpleComplexEnough2021} and the analysis of the model's accuracy and its sensitivity \cite{khoshnawQuantitativeQualitativeAnalysis2020}
+ 	\item global Markov Model approach \cite{frihiToolboxSimulateMitigate2021}
+	\item impact of quarantine/lockdown on the pandemic spread \cite{wellsOptimalCOVID19Quarantine2021}, \cite{memonAssessingRoleQuarantine2021} and other special groups at risk \cite{kouidereOptimalControlMathematical2021}
+	\item concepts to control the pandemic \cite{pintonetoMathematicalModelCOVID192021}, \cite{aravindakshanPreparingFutureCOVID192020}, its economic impact \cite{caulkinsOptimalLockdownIntensity2021} and how the right to demonstrate might conflict with pandemic containment \cite{langeSpreadingDiseaseProtest2021}
+	\item approaches to track and predict spread in real time with mobility data \cite{leungRealtimeTrackingPrediction2021} or online search terms \cite{lamposTrackingCOVID19Using2021}
+\end{enumerate}
+
+The approach in this report builds on the paper and MATLAB implementation of Vrabac et al. \cite{vrabacCapturingEffectsTransportation2020}. The following section presents the prerequisites to apply it to data from Germany alongside the measures taken to improve the performance of the networked SEIR model.
+
+\subsection{Problem Setup}
+The problem setup consists of
+
+\begin{itemize}
+	\item raw, unrelated data from various sources and
+	\item a prototypic MATLAB implementation of the networked SEIR model from \cite{vrabacCapturingEffectsTransportation2020}.
+\end{itemize}
+
+Based on this, a data processing pipeline to fuse the different data sets and transform them into a simulation ready format is presented. Subsequently, the parameters of a networked SEIR model are identified and tested using both factual initial conditions and behavior data and counterfactual behavior data to determine the sensitivity of the pandemic spread to changes of the population's mobility behavior.

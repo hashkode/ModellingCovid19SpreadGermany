@@ -1,0 +1,3 @@
+[submodule "prj/dat/raw/covid-data"]
+	path = prj/dat/raw/covid-data
+	url = https://github.com/hashkode/covid-data.git

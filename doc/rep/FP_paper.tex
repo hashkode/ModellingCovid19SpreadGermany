@@ -1,0 +1,69 @@
+% based on IEEE template, adapted by Tim Bruedigam and students
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+%\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+%\usepackage[utf8]{inputenc}
+\usepackage[]{todonotes}
+\usepackage{hyperref}
+\newcommand{\chapter}{\section}
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\input{include/customize.tex}
+\input{./include/gloss.tex}		% add your glossary in this file 
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title / Student %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Modeling the Impact of Public Traffic on COVID-19 Spread Rates in Germany}
+
+\author{\IEEEauthorblockN{Tobias Krug}
+\IEEEauthorblockA{\textit{Department of Electrical and Computer Engineering, Chair of Automatic Control Engineering (LSR)} \\
+\textit{Technical University of Munich}\\
+Munich, Germany\\
+tobias.krug@tum.de}
+}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+This report builds on the idea of the networked SEIR model to recover pandemic spread parameters and apply the identified model for simulation/prediction of pandemic activity based on COVID-19 case data, public transport schedule information and estimated mobility behavior of a population. A data-driven methodology to the problems of transient network structure recovery and time-varying strength of adjacency estimation is presented. A case study on German data is implemented and the resulting models' performances are evaluated numerically and graphically.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Epidemic modeling, System identification, Networked control systems, Data engineering
+\end{IEEEkeywords}
+
+\input{./chapters/Introduction.tex}
+\input{./chapters/MainPart.tex}
+\input{./chapters/Evaluation.tex}
+\input{./chapters/Discussion.tex}
+\input{./chapters/Conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%\appendix
+\appendices
+\input{./chapters/Appendix.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{refs/literature}
+\bibliographystyle{ieeetr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% List of Abrevations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\AddMyGloss
+\glsaddall
+	\AddMyGloss 
+\fi
+\end{document}
