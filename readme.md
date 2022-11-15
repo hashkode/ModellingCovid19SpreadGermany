@@ -1,5 +1,5 @@
-# Forschungspraxis project on traffic network reconstruction in the wake of COVID-19
-This repository holds all information related to the Forschungspraxis project offered by LSR. 
+# Modeling the Impact of Public Traffic on COVID-19 Spread Rates in Germany
+Forschungspraxis project on traffic network reconstruction in the wake of COVID-19. This repository holds all information related to the Forschungspraxis project offered by LSR.
 
 ## Meta
 The following people are involved:
